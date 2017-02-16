@@ -8,25 +8,30 @@ namespace CdApplication
 {
     class Songs
     {
-        public string Album { get; set; }
-        public string Artist { get; set; }
-
         private List<CD> songs;
         public Songs()
         {
             songs = new List<CD>();
         }
-        public void AddCD(CD song)
+         public void AddCD(CD song)
         {
             songs.Add(song);
         }
-        
-        public override string ToString()
+
+
+        private List<Albums> albums;
+        public Albums()
         {
-            return Album + " " + Artist;
+            albums = new List<Albums>();
         }
+        public void AddSongs(Albums album)
+        {
+            albums.Add(album);
+        }
+
         public void PrintCollection()
         {
+            Console.WriteLine(albums.ToString());
             foreach (CD song in songs)
             {
                 Console.WriteLine(song.ToString());
